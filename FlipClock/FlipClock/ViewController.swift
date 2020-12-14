@@ -15,9 +15,9 @@ class ViewController: UIViewController {
         let flip = FlipClockView(frame: self.view.bounds)
         flip.backgroundColor = .black
         flip.is12HourClock = true
-        flip.secondIsVisible = true
+        flip.secondIsVisible = false
         flip.weekdayIsVisible = true
-        flip.yearMonthDayIsVisible = true
+        flip.yearMonthDayIsVisible = false
         flip.date = Date()
         return flip
     }()
