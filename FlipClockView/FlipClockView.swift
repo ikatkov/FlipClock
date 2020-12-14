@@ -176,7 +176,7 @@ extension FlipClockView {
         super.layoutSubviews()
         
         /// 间距
-        let margin: CGFloat = 0.07 * bounds.size.width
+        let margin: CGFloat = 0.02 * bounds.size.width
         /// The width of each item
         var itemW: CGFloat = (bounds.size.width - 4 * margin) / 3
         if(!secondIsVisible){
