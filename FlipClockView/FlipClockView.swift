@@ -42,7 +42,7 @@ class FlipClockView: UIView {
         }
     }
     
-    /// 是否为十二小时制  (默认：24小时制。FALSE,)
+    ///    Whether it is a twelve-hour clock (default: 24-hour clock. FALSE,)
     var is12HourClock: Bool = false {
         didSet {
             if is12HourClock != oldValue {
@@ -55,7 +55,7 @@ class FlipClockView: UIView {
         }
     }
     
-    /// 是否可见工作日、普通日 。(星期天及星期六以外的) 任何一天
+    /// Whether working days and ordinary days are visible. (Except Sunday and Saturday) any day
     var weekdayIsVisible: Bool = false {
         didSet {
             if weekdayIsVisible != oldValue {
@@ -66,7 +66,7 @@ class FlipClockView: UIView {
         }
     }
     
-    /// 秒是否可见
+    ///    Is visible in seconds
     var secondIsVisible: Bool = false {
         didSet {
             if secondIsVisible != oldValue {
@@ -77,7 +77,7 @@ class FlipClockView: UIView {
         }
     }
     
-    /// 年月日是否可见
+    ///    Is the year, month and day visible
     var yearMonthDayIsVisible: Bool = false {
         didSet {
             if yearMonthDayIsVisible != oldValue {
@@ -88,7 +88,7 @@ class FlipClockView: UIView {
         }
     }
     
-    /// 字体
+    /// Font
     var font: UIFont? {
         didSet {
             hourItem.font = font
@@ -97,7 +97,7 @@ class FlipClockView: UIView {
         }
     }
     
-    /// 文字颜色
+    ///    Text color
     var textColor: UIColor? {
         didSet {
             hourItem.textColor = textColor
@@ -108,28 +108,28 @@ class FlipClockView: UIView {
     
     //MARK: - Lazy loading
     
-    /// 小时
+    /// hour
     private lazy var hourItem: FlipClockItem = {
         let hour = FlipClockItem()
         hour.type = .FlipClockItemTypeHour
         return hour
     }()
     
-    /// 分钟
+    /// minute
     private lazy var minuteItem: FlipClockItem = {
         let minute = FlipClockItem()
         minute.type = .FlipClockItemTypeMinute
         return minute
     }()
     
-    /// 秒
+    /// second
     private lazy var secondItem: FlipClockItem = {
         let second = FlipClockItem()
         second.type = .FlipClockItemTypeSecond
         return second
     }()
     
-    /// 时间制式label
+    /// Time system label
     private lazy var timeSystemLabel: UILabel = {
         let timeSystemLabel = UILabel(frame: CGRect(x: 0, y: 10, width: 215, height: 30))
         timeSystemLabel.textColor = .lightText
@@ -138,17 +138,17 @@ class FlipClockView: UIView {
         return timeSystemLabel
     }()
     
-    /// 工作日label
+    ///    Working day label
     private lazy var weekdayLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 10, width: 215, height: 30))
         label.textColor = .lightText
-        label.isHidden = true   // 默认为：隐藏
+        label.isHidden = true   //        The default is: hidden
         label.font = UIFont(name: "HelveticaNeue-CondensedBold", size: 20)
         label.backgroundColor = .clear
         return label
     }()
     
-    /// 年月日label
+    /// year month day label
     private lazy var yearToDateLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 10, width: 215, height: 30))
         label.textColor = .lightText
@@ -204,20 +204,19 @@ extension FlipClockView {
 //MARK: - Convert Time Format
 extension FlipClockView {
     
-    /// 转换时间制式 （24 - > 12小时制）
+    ///    Conversion time format (24 -> 12 hour format)
     ///
     /// - Returns: String
     func convertTimeFormat() -> String {
         let df = DateFormatter()
-        df.locale = Locale(identifier: "zh-CN")
-        // 设置时间格式
-        //“ a”是AM / PM指示符的ICU符号。它永远不可能是“ A”，因为ICU使用“ A”来表示完全不同的东西（一天中的毫秒数）。
+        df.locale = Locale(identifier: "en-US")
+        // Set the time format
+        // "a" is the ICU symbol for AM/PM indicator. It can never be "A" because ICU uses "A" to mean something completely different (the number of milliseconds in a day).
         df.dateFormat = "a"
         df.amSymbol = "AM"
         df.pmSymbol = "PM"
-        // 设置时区
-        df.timeZone = TimeZone(identifier: "Asia/Shanghai")
-        print("当前时区-\(TimeZone.current)----\(NSTimeZone.system)")
+        df.timeZone = TimeZone(identifier: "America/Los_Angeles")
+        print("Current timezone-\(TimeZone.current)----\(NSTimeZone.system)")
         
         // 调用string方法进行转换
         let dateString = df.string(from: Date())
@@ -230,19 +229,19 @@ extension FlipClockView {
     func getWeekdayWithNumber(_ number: Int) -> String? {
         switch number {
         case 1:
-            return "星期日"
+            return "Воскресенье"
         case 2:
-            return "星期一"
+            return "Понедельник"
         case 3:
-            return "星期二"
+            return "Вторник"
         case 4:
-            return "星期三"
+            return "Среда"
         case 5:
-            return "星期四"
+            return "Четверг"
         case 6:
-            return "星期五"
+            return "Пятница"
         case 7:
-            return "星期六"
+            return "Суббота"
         default:
             return ""
         }

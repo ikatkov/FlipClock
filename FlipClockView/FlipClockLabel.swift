@@ -9,7 +9,7 @@
 import UIKit
 
 
-/// 下一个label开始值
+///Start value of next label
 private let NextLabelStartValue: CGFloat = 0.01
 
 
@@ -17,10 +17,10 @@ class FlipClockLabel: UIView {
 
     //MARK: Attribute
     
-    /// 动画执行进度
+    ///    Animation execution progress
     var animateValue: CGFloat = 0.0
     
-    /// 字体
+    /// Font
     var font: UIFont? {
         didSet {
             timeLabel.font = font
@@ -29,7 +29,7 @@ class FlipClockLabel: UIView {
         }
     }
     
-    /// 文字颜色
+    ///    Text color
     var textColor: UIColor? {
         didSet {
             timeLabel.textColor = textColor
@@ -38,7 +38,7 @@ class FlipClockLabel: UIView {
         }
     }
     
-    /// 文字对齐方式 （默认，居左对齐）
+    ///    Text alignment (default, left aligned)
     var textAlignment: NSTextAlignment = .left {
         didSet {
             timeLabel.textAlignment = textAlignment
@@ -49,35 +49,35 @@ class FlipClockLabel: UIView {
     
     //MARK: Lazy loading
     
-    /// 当前时间label
+    ///    Current time label
     private lazy var timeLabel: UILabel = {
         let timeLabel = UILabel()
         configLabel(timeLabel)
         return timeLabel
     }()
     
-    /// 翻转动画label
+    ///    Flip animation label
     private lazy var foldLabel: UILabel = {
         let foldLabel = UILabel()
         configLabel(foldLabel)
         return foldLabel
     }()
     
-    /// 下一个时间label
+    ///    Next time label
     private lazy var nextLabel: UILabel = {
         let nextLabel = UILabel()
         configLabel(nextLabel)
         return nextLabel
     }()
     
-    /// 放置label的容器
+    ///    The container where the label is placed
     private lazy var labelContainer: UIView = {
         let labelContainer = UIView()
         labelContainer.backgroundColor = UIColor(red: 46 / 255.0, green: 43 / 255.0, blue: 46 / 255.0, alpha: 1)
         return labelContainer
     }()
     
-    /// 刷新UI工具
+    ///Refresh UI tools
     private lazy var link: CADisplayLink = {
         let link = CADisplayLink(target: self, selector: #selector(updateAnimateLabel))
         return link
@@ -111,7 +111,7 @@ extension FlipClockLabel {
 // MARK: - Configuration
 extension FlipClockLabel {
     
-    /// 配置UI
+    ///Configure UI
     private func configUI() {
         addSubview(labelContainer)
         labelContainer.addSubview(timeLabel)
@@ -119,7 +119,7 @@ extension FlipClockLabel {
         labelContainer.addSubview(foldLabel)
     }
     
-    /// 配置UILabel
+    ///    Configure UILabel
     ///
     /// - Parameter label: UILabel
     private func configLabel(_ label: UILabel) {
