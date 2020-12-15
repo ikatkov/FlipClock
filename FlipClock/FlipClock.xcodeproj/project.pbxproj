@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39ABE60D2588AE180047A3EE /* Solar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ABE60C2588AE180047A3EE /* Solar.swift */; };
 		6B15C69F20BC522A0032D040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C69E20BC522A0032D040 /* AppDelegate.swift */; };
 		6B15C6A120BC522A0032D040 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15C6A020BC522A0032D040 /* ViewController.swift */; };
 		6B15C6A420BC522A0032D040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B15C6A220BC522A0032D040 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39ABE60C2588AE180047A3EE /* Solar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
 		6B15C69B20BC522A0032D040 /* Часики.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Часики.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B15C69E20BC522A0032D040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B15C6A020BC522A0032D040 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				6B15C6A520BC522A0032D040 /* Assets.xcassets */,
 				6B15C6A720BC522A0032D040 /* LaunchScreen.storyboard */,
 				6B15C6AA20BC522A0032D040 /* Info.plist */,
+				39ABE60C2588AE180047A3EE /* Solar.swift */,
 			);
 			path = FlipClock;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				6BA2FC7720C2EF7800D4DF3C /* FlipClockItem.swift in Sources */,
 				6BA2FC7520C2ED5D00D4DF3C /* FlipClockView.swift in Sources */,
 				6BA2FC7920C304F200D4DF3C /* FlipClockLabel.swift in Sources */,
+				39ABE60D2588AE180047A3EE /* Solar.swift in Sources */,
 				6B15C6A120BC522A0032D040 /* ViewController.swift in Sources */,
 				6B15C69F20BC522A0032D040 /* AppDelegate.swift in Sources */,
 			);

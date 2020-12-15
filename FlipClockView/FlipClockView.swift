@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreLocation
 
 class FlipClockView: UIView, UIGestureRecognizerDelegate {
     
@@ -17,6 +17,10 @@ class FlipClockView: UIView, UIGestureRecognizerDelegate {
     var calendar = Calendar.current
     /// 日期的组件
     var dateComponent: DateComponents!
+    
+    var dayTimeBrightness: Float = 0.8
+    var nightTimeBrightness: Float = 0.3
+    var solar: Solar!
     
     /// 时间
     var date: Date? {
@@ -38,7 +42,17 @@ class FlipClockView: UIView, UIGestureRecognizerDelegate {
             secondItem.time = dateComponent?.second
             
             weekdayLabel.text = getWeekdayWithNumber(dateComponent.weekday!)
-            yearToDateLabel.text = "\(dateComponent.year!)年\(dateComponent.month!)月\(dateComponent.day!)日"
+            yearToDateLabel.text = "\(dateComponent.year!)-\(dateComponent.month!)-\(dateComponent.day!)"
+            
+            solar = Solar(for: self.date!, coordinate: CLLocationCoordinate2D(latitude: 37.2685, longitude: -121.8490))
+            if (solar!.isDaytime) {
+                UIScreen.main.brightness = CGFloat(dayTimeBrightness)
+                print("Daytime, brightness set to \(dayTimeBrightness)")
+            }else{
+                UIScreen.main.brightness = CGFloat(nightTimeBrightness)
+                print("Nightime, brightness set to \(nightTimeBrightness)")
+            }
+
         }
     }
     
@@ -185,6 +199,11 @@ class FlipClockView: UIView, UIGestureRecognizerDelegate {
                 brightness = brightness + 0.01
                 UIScreen.main.brightness = CGFloat(brightness)
                 print("Increase brigntness in pan \(brightness)")
+            }
+            if solar!.isDaytime {
+                dayTimeBrightness = Float(UIScreen.main.brightness)
+            }else{
+                nightTimeBrightness = Float(UIScreen.main.brightness)
             }
         }
     }
