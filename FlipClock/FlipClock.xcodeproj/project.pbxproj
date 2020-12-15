@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6B15C69B20BC522A0032D040 /* FlipClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B15C69B20BC522A0032D040 /* Часики.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Часики.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B15C69E20BC522A0032D040 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B15C6A020BC522A0032D040 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6B15C6A320BC522A0032D040 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		6B15C69C20BC522A0032D040 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B15C69B20BC522A0032D040 /* FlipClock.app */,
+				6B15C69B20BC522A0032D040 /* Часики.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6B15C69A20BC522A0032D040 /* FlipClock */ = {
+		6B15C69A20BC522A0032D040 /* Часики */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B15C6AD20BC522A0032D040 /* Build configuration list for PBXNativeTarget "FlipClock" */;
+			buildConfigurationList = 6B15C6AD20BC522A0032D040 /* Build configuration list for PBXNativeTarget "Часики" */;
 			buildPhases = (
 				6B15C69720BC522A0032D040 /* Sources */,
 				6B15C69820BC522A0032D040 /* Frameworks */,
@@ -97,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = FlipClock;
+			name = "Часики";
 			productName = FlipClock;
-			productReference = 6B15C69B20BC522A0032D040 /* FlipClock.app */;
+			productReference = 6B15C69B20BC522A0032D040 /* Часики.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B15C69A20BC522A0032D040 /* FlipClock */,
+				6B15C69A20BC522A0032D040 /* Часики */,
 			);
 		};
 /* End PBXProject section */
@@ -342,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B15C6AD20BC522A0032D040 /* Build configuration list for PBXNativeTarget "FlipClock" */ = {
+		6B15C6AD20BC522A0032D040 /* Build configuration list for PBXNativeTarget "Часики" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B15C6AE20BC522A0032D040 /* Debug */,

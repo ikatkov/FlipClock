@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6B15C69A20BC522A0032D040"
-               BuildableName = "FlipClock.app"
-               BlueprintName = "FlipClock"
+               BuildableName = "&#x427;&#x430;&#x441;&#x438;&#x43a;&#x438;.app"
+               BlueprintName = "&#x427;&#x430;&#x441;&#x438;&#x43a;&#x438;"
                ReferencedContainer = "container:FlipClock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B15C69A20BC522A0032D040"
-            BuildableName = "FlipClock.app"
-            BlueprintName = "FlipClock"
+            BuildableName = "&#x427;&#x430;&#x441;&#x438;&#x43a;&#x438;.app"
+            BlueprintName = "&#x427;&#x430;&#x441;&#x438;&#x43a;&#x438;"
             ReferencedContainer = "container:FlipClock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B15C69A20BC522A0032D040"
-            BuildableName = "FlipClock.app"
-            BlueprintName = "FlipClock"
+            BuildableName = "&#x427;&#x430;&#x441;&#x438;&#x43a;&#x438;.app"
+            BlueprintName = "&#x427;&#x430;&#x441;&#x438;&#x43a;&#x438;"
             ReferencedContainer = "container:FlipClock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

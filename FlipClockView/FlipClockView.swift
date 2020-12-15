@@ -9,7 +9,7 @@
 import UIKit
 
 
-class FlipClockView: UIView {
+class FlipClockView: UIView, UIGestureRecognizerDelegate {
     
     //MARK: - Attribute
     
@@ -161,8 +161,34 @@ class FlipClockView: UIView {
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        let panGesture = UIPanGestureRecognizer.init(target: self, action: #selector(pan))
+        panGesture.delegate = self
+        panGesture.minimumNumberOfTouches = 1
+        addGestureRecognizer(panGesture)
+        
         configUI()
     }
+    
+    @objc func pan(recognizer:UIPanGestureRecognizer){
+        if recognizer.state == UIGestureRecognizer.State.changed || recognizer.state == UIGestureRecognizer.State.ended {
+            let velocity:CGPoint = recognizer.velocity(in: self)
+
+            if velocity.y > 0{
+                var brightness: Float = Float(UIScreen.main.brightness)
+                brightness = brightness - 0.01
+                UIScreen.main.brightness = CGFloat(brightness)
+                print("Decrease brigntness in pan  \(brightness)")
+            }
+            else {
+                var brightness: Float = Float(UIScreen.main.brightness)
+                brightness = brightness + 0.01
+                UIScreen.main.brightness = CGFloat(brightness)
+                print("Increase brigntness in pan \(brightness)")
+            }
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
